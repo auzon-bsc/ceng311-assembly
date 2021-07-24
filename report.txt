@@ -1,0 +1,40 @@
+NOTES:
+
+In test file "ass2_mainFunction.asm" an argument for build was missing, so I added it.
+Screenshots provided in zip file
+
+IMPLEMENTATION DETAILS:
+
+	.global:
+		tree variable and function labels because main function uses them
+	.data:
+		MAXINT := -9999 is loaded to register s7
+		null := 'n' this represents null values
+		tree # empty tree initialized here
+		there are also some data for printing some text
+	.text:
+		build procedure:
+			it uses a loop and iterates from the given list
+			at each iteration a new value will be inserted
+			when the value is equal to -9999 it terminates the loop
+		insert procedure:
+			it uses recursive calls to insert single element to tree
+		find procedure:
+			this procedure also uses recursive calls to find an element
+		printTree:
+			this is the longest and complex procedure
+			first, it initialize some variables such as height of the tree
+			then it begins to loop for iteration of each level
+			there is also a small loop to print the empty nodes
+			for non empty nodes, it uses recursive calls
+		maxof:
+			finds the biggest of the two numbers
+		getheight:
+			calculates the height of the tree
+		printcontent:
+			it is an auxilary procedure for printTree
+			it prints at most two tokens
+			first token is the node, second is a special formatted character
+			special formatted characters: {'-', "    ", "\n"}
+		
+		all procedures composed of smaller procedures or labels to help the main one
